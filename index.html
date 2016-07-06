@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	html,body{
+		width:100%;
+		height:100%;
+	}
+	.box{
+		width:100%;
+		height:8rem;
+		background:red;
+		transition:all 0.5s;
+	}
+	.box.ng-enter{
+		transform:translate3d(-100%,0,0);
+		opacity: 0
+	}
+	.box.ng-enter-active{
+		transform:translate3d(0%,0,0);
+	}
+	.box.ng-leave{
+		transform:translate3d(-100%,0,0);
+	}
+	.box.ng-enter-active{
+		transform:translate3d(100%,0,0);
+	}
+</style>
+<body ng-controller="ctr">
+	<input type="checkbox" ng-model="btn">
+	<div class="box" ng-if="btn"></div>
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-animate.min.js"></script>
+	<script>
+		var myApp=angular.module("myApp",['ngAnimate']);
+			myApp.controller('ctr',['$scope',function($scope){
+				$scope.btn=false;
+			}])
+	</script>
+</body>
+</html>

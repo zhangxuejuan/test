@@ -1,0 +1,57 @@
+  angular.min.js
+  angular-route
+
+  一个页面只能嵌入一个ng-view,不能实现添加多个ng-view
+
+  并且不能实现视图嵌套
+
+
+  ui-router实现复杂的路由形式，是由angularUI团队开发的
+
+
+  npm install angular-ui-router
+
+  ui-router基于状态管理的路由方式
+
+   ui-view 展现视图内容 相当于ng-view
+
+$urlRouterProvider:可以实现默认地址跳转
+$stateProvider
+	 .state('状态名',{
+
+
+    })
+	
+
+
+1.视图嵌套
+2.一个页面添加多个view
+
+<div ui-view="topbar"></div>
+<div ui-view="bottom"></div>
+
+
+.state('index',{
+	          url:"/index",
+		      views:{
+			  	 "aa":{templateUrl:"home.html"},
+				 "topbar@index":{
+					 templateUrl:"header.html",
+					 controller:function($scope,$state) {					 
+						// $state.go("index.product.dianzi");
+						 
+					 }
+				 },
+				 "bottom@index":{
+				   templateUrl:"bottom.html",
+				   controller:function($scope,$state) {					 
+						$scope.info="底部版权@1407W";
+						 
+					 }
+				 }
+			  }		
+	
+	     })	
+
+
+	

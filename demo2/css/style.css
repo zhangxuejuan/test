@@ -1,0 +1,14 @@
+*{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style: none;
+}
+li{
+	float:left;
+	margin-right:10px;
+}
+.clear{
+	clear:both;
+}

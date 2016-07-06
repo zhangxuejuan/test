@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>ui-router路由</title>
+
+</head>
+<body>
+	
+<div class="box">
+	<a ui-sref="index">首页</a>
+	<a ui-sref="news">新闻</a>
+	<a ui-sref="fujin">附近</a>
+	
+	<div ui-view></div>
+</div>
+	
+	
+<script src="lib/angular.min.js"></script>	
+<script src="lib/angular-animate.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
+<script>
+	var myApp=angular.module('myApp',['ui.router']);
+	    myApp.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider) {
+			
+		 $urlRouterProvider.otherwise('/index');
+		  $stateProvider
+			     .state('index',{
+		               url:'/index',
+			           templateUrl:"home.html"		  
+		         })
+			     .state('news',{
+		               url:'/news',
+			           templateUrl:"news.html"		  
+		         })
+		         .state('news.guonei',{
+			           url:"/guonei",
+			           templateUrl:"guonei.html",
+			           controller:function($scope) {
+					      $scope.info=[
+							  {title:'新闻1',content:'新闻1的内容'},
+							  {title:'新闻2',content:'新闻2的内容'},
+							  {title:'新闻3',content:'新闻3的内容'},
+							  {title:'新闻4',content:'新闻4的内容'},
+							  {title:'新闻5',content:'新闻5的内容'},
+							  {title:'新闻6',content:'新闻6的内容'}
+						  
+						  ];
+					   }
+		  
+		        })
+			     .state('news.guoji',{
+			           url:"/guoji",
+			           templateUrl:"guoji.html",
+			           controller:function($scope) {
+						   $scope.t="国际新闻列表";
+					       $scope.info=[
+							  {title:'国际新闻1',content:'新闻1的内容'},
+							  {title:'国际新闻2',content:'新闻2的内容'},
+							  {title:'新闻3',content:'新闻3的内容'},
+							  {title:'新闻4',content:'新闻4的内容'},
+							  {title:'新闻5',content:'新闻5的内容'},
+							  {title:'新闻6',content:'新闻6的内容'}
+						  
+						  ];
+					   }
+		  
+		        }).state('news.hangye',{
+			           url:"/hangye",
+			           templateUrl:"hangye.html",
+			           controller:function($scope) {
+					      $scope.info=[
+							  {title:'行业新闻1',content:'新闻1的内容'},
+							  {title:'行业新闻2',content:'新闻2的内容'},
+							  {title:'新闻3',content:'新闻3的内容'},
+							  {title:'新闻4',content:'新闻4的内容'},
+							  {title:'新闻5',content:'新闻5的内容'},
+							  {title:'新闻6',content:'新闻6的内容'}
+						  
+						  ];
+					   }
+		  
+		        })
+			     .state('fujin',{
+		               url:'/fujin',
+			           templateUrl:"fujin.html"		  
+		         })
+		
+		}]);
+	    
+	   
+	
+</script>	
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script> 
+</head>
+<body ng-controller="ctr">   //ng-model指令
+
+<div ng-app="myApp" ng-controller="myCtrl">
+名字: <input ng-model="name">
+</div>
+
+<script>
+/*var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "张学娟";
+});*/
+
+
+var app=angular.module('myApp',[]);
+app.controller('myCtrl',function($scope){
+	$scope.name="1407w";
+});
+</script>
+
+<p>使用 ng-model 指令来绑定输入域的值到控制器的属性。</p>
+
+</body>
+</html>

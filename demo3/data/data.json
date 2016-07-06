@@ -1,0 +1,29 @@
+{ "success":1,
+  "books":{
+  	"shu":[
+	  {
+	  	"name":"javascripr高级程序设计",
+		"price":50,
+		"publishion":"清华大学出版社222"
+	  }, {
+	  	"name":"javascript权威指南",
+		"price":60,
+		"publishion":"人民邮电出版社"
+	  }, {
+	  	"name":"javascript设计模式",
+		"price":40,
+		"publishion":"高等教育出版社"
+	  }, {
+	  	"name":"锋利的jQuery（第2版）",
+		"price":30,
+		"publishion":"清华大学出版社"
+	  }, {
+	  	"name":"编写可维护的JavaScript",
+		"price":50,
+		"publishion":"人民邮电出版社"
+	  }
+  
+  ]
+  }
+}
+
